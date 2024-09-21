@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="page14Chal.js"></script>
+</link>
+</head>
+<body>
+    <button id="buttonId" class="again">Press</button>
+    <p class="message">Message</p>
+    <p class="number">Number</p>
+    <p class="score">Score</p>
+    <input type="text" class="guess">
+    
+    
+</body>
+</html>
+
+<!-- JavaScript in the Browser: DOM and Events 
+Coding Challenge #1 
+Implement a game rest functionality, so that the player can make a new guess! 
+Your tasks: 
+1. Select the element with the 'again' class and attach a click event handler 
+2. In the handler function, restore initial values of the 'score' and 
+'secretNumber' variables 
+3. Restore the initial conditions of the message, number, score and guess input 
+fields 
+4. Also restore the original background color (#222) and number width (15rem) 
+GOOD LUCK 
+� -->
+<!-- ```
+
+```javascript
+// JavaScript in the Browser: DOM and Events
+// Coding Challenge #1
+// Implement a game rest functionality, so that the player can make a new guess!
+// Your tasks:
+// 1. Select the element with the 'again' class and attach a click event handler
+// 2. In the handler function, restore initial values of the 'score' and
+// 'secretNumber' variables
+// 3. Restore the initial conditions of the message, number, score and guess input
+// fields
+// 4. Also restore the original background color (#222) and number width (15rem)
+// GOOD LUCK
+// �
+
+// Selecting elements
+const againBtn = document.querySelector('.again');
+const message = document.querySelector('.message');
+const number = document.querySelector('.number');
+const score = document.querySelector('.score');
+const guess = document.querySelector('.guess');
+const body = document.querySelector('body');
+
+// Initial values
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
+let scoreValue = 20;
+
+// Event listener
+
+againBtn.addEventListener('click', function () {
+    secretNumber = Math.trunc(Math.random() * 20) + 1;
+    scoreValue = 20;
+    message.textContent = 'Start guessing...';
+    number.textContent = '?';
+    score.textContent = scoreValue;
+    guess.value = '';
+    body.style.backgroundColor = '#222';
+    number.style.width = '15rem';
+});
+``` -->
